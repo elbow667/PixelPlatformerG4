@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://qo74ng0khcg3"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xu5c6"]
+[ext_resource type="SpriteFrames" uid="uid://c0dbuw8yhnrs" path="res://Scenes/player_pink_skin.tres" id="2_on3rt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41qea"]
+size = Vector2(12, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xu5c6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+frames = ExtResource("2_on3rt")
+animation = &"Jump"
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_41qea")

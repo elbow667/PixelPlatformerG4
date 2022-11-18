@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://c0dbuw8yhnrs"]
+
+[ext_resource type="Texture2D" uid="uid://5nr28x1c4hdm" path="res://Art/Characters/characters_packed.png" id="1_yc3xd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuala"]
+atlas = ExtResource("1_yc3xd")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vay4v"]
+atlas = ExtResource("1_yc3xd")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s67cf"]
+atlas = ExtResource("1_yc3xd")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0r6t"]
+atlas = ExtResource("1_yc3xd")
+region = Rect2(96, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [SubResource("AtlasTexture_xuala")],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_vay4v")],
+"loop": false,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_s67cf"), SubResource("AtlasTexture_e0r6t")],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
