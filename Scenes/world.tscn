@@ -16,10 +16,6 @@ layer_0/tile_data = PackedInt32Array(7, 131073, 0, 8, 131073, 0, 9, 131073, 0, 1
 [node name="Player" parent="." instance=ExtResource("2_1poif")]
 position = Vector2(99, 14)
 z_index = 10
-JUMP_RELEASE_FORCE = -40
-MAX_SPEED = 75
-GRAVITY = 5
-ADDITIONAL_FALL_GRAVITY = 2
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -35,4 +31,4 @@ position = Vector2(174, 150)
 position = Vector2(192, 150)
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("5_2waxf")]
-position = Vector2(545, 95)
+position = Vector2(305, 149)

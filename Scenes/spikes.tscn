@@ -1,11 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckq31075ibp4m"]
 
-[ext_resource type="Script" path="res://Scripts/spikes.gd" id="1_dr2vd"]
 [ext_resource type="Texture2D" uid="uid://be8pjbkddf88d" path="res://Art/Tiles/tiles_packed.png" id="1_uaqbf"]
+[ext_resource type="PackedScene" uid="uid://de31b56l425wv" path="res://Scenes/hitbox.tscn" id="2_02djj"]
 
-[node name="Spikes" type="Area2D"]
-collision_mask = 2
-script = ExtResource("1_dr2vd")
+[node name="Spikes" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
@@ -13,7 +11,7 @@ texture = ExtResource("1_uaqbf")
 region_enabled = true
 region_rect = Rect2(144, 54, 18, 18)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-7, 0, -7, -3, -5, -7, -3, -7, -1, -3, 1, -3, 3, -7, 5, -7, 7, -3, 7, 0)
+[node name="Hitbox" parent="." instance=ExtResource("2_02djj")]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PackedVector2Array(-7, 0, -7, -3, -5, -7, -3, -7, -1, -3, 1, -3, 3, -7, 5, -7, 7, -3, 7, 0)
