@@ -25,10 +25,11 @@ func _physics_process(_delta):
 	if direction: # if not zero
 		apply_acceleration(direction)
 		animated_sprite.animation = "Run"
-		if (velocity.x > 0):
-			animated_sprite.flip_h = true
-		elif(velocity.x < 0):
-			animated_sprite.flip_h = false
+		animated_sprite.flip_h = velocity.x > 0
+#		if (velocity.x > 0):
+#			animated_sprite.flip_h = true
+#		elif(velocity.x < 0):
+#			animated_sprite.flip_h = false
 	else:
 		apply_friction()
 		animated_sprite.animation = "Idle"
