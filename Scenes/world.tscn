@@ -1,37 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfljrmdd1475w"]
+[gd_scene load_steps=4 format=3 uid="uid://cfljrmdd1475w"]
 
-[ext_resource type="PackedScene" uid="uid://kdwdu4gnd4uu" path="res://Scenes/block.tscn" id="1_b7x6b"]
 [ext_resource type="PackedScene" uid="uid://qo74ng0khcg3" path="res://Scenes/player.tscn" id="2_1poif"]
+[ext_resource type="PackedScene" uid="uid://hmpoln8ll3rq" path="res://Scenes/tile_map.tscn" id="2_3aeh2"]
+[ext_resource type="PackedScene" uid="uid://ckq31075ibp4m" path="res://Scenes/spikes.tscn" id="3_nt5ux"]
 
 [node name="World" type="Node2D"]
 
-[node name="Block" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(77, 101)
-
-[node name="Block2" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(95, 101)
-
-[node name="Block6" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(113, 101)
-
-[node name="Block3" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(167, 65)
-
-[node name="Block4" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(131, 101)
-
-[node name="Block5" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(149, 83)
-
-[node name="Block7" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(185, 65)
-
-[node name="Block8" parent="." instance=ExtResource("1_b7x6b")]
-position = Vector2(203, 65)
+[node name="TileMap" parent="." instance=ExtResource("2_3aeh2")]
+position = Vector2(94, 76)
+layer_0/tile_data = PackedInt32Array(7, 131073, 0, 8, 131073, 0, 9, 131073, 0, 10, 131073, 0, 11, 131073, 0, 196614, 65537, 1, 196615, 131073, 1, 196616, 131073, 1, 196617, 196609, 1, 262153, 262145, 1, 262152, 131073, 6, 262151, 131073, 6, 262150, 327681, 1, 65540, 1, 0, 131070, 262145, 1, 131071, 131073, 1, 65536, 131073, 1, 65537, 131073, 1, 65538, 196609, 1, 131074, 196609, 6, 131073, 131073, 6, 131072, 131073, 6, 196607, 131073, 6, 196606, 327681, 0, 262142, 65537, 6, 262143, 131073, 6, 196608, 131073, 6, 196609, 131073, 6, 196610, 196609, 6, 131069, 327681, 1, 131068, 131073, 1, 131067, 65537, 1, 196605, 131073, 7, 196604, 131073, 7, 196603, 65537, 7, 65533, 65537, 1, 65534, 196609, 1, 196611, 1, 1, 262147, 262145, 1, 262148, 131073, 1, 262149, 131073, 1, 327686, 131073, 7, 262154, 131073, 1, 262155, 131073, 1, 327690, 131073, 7, 327689, 131073, 7, 327688, 131073, 7, 327687, 131073, 7, 327685, 131073, 7, 327684, 131073, 7, 327683, 131073, 7, 262146, 131073, 6, 262145, 131073, 6, 262144, 131073, 6, 327679, 327681, 0, 327678, 65537, 7, 393215, 65537, 7, 327680, 131073, 7, 327681, 131073, 7, 327682, 131073, 7, 327691, 327681, 0, 327692, 131073, 6, 393228, 131073, 6, 327693, 196609, 1, 262156, 196609, 1, 458764, 131073, 7, 458763, 65537, 7, 393227, 65537, 6, 393229, 262145, 1, 393230, 131073, 1, 458766, 131073, 7, 458765, 131073, 7, 458767, 131073, 7, 458768, 327681, 0, 393232, 196609, 1, 393231, 131073, 1, 524304, 65537, 7, 524305, 131073, 7, 458769, 131073, 1, 524306, 131073, 7, 458770, 131073, 1, 393235, 65537, 1, 393236, 327681, 1, 327700, 65537, 1, 327701, 327681, 1, 393237, 131073, 6, 262165, 65537, 6, 196629, 65537, 1, 262166, 131073, 6, 196630, 327681, 1, 327702, 131073, 6, 393238, 131073, 6, 131094, 65537, 1, 131095, 196609, 1, 196631, 196609, 6, 262167, 196609, 6, 327703, 196609, 6, 393239, 131073, 6, 393240, 196609, 1, 458776, 196609, 7, 458775, 131073, 7, 458773, 131073, 7, 458774, 131073, 7, 458772, 262145, 0, 458771, 327681, 1, 524307, 131073, 7, 524308, 196609, 7)
 
 [node name="Player" parent="." instance=ExtResource("2_1poif")]
 position = Vector2(99, 14)
+z_index = 10
 JUMP_RELEASE_FORCE = -40
 MAX_SPEED = 75
 GRAVITY = 5
 ADDITIONAL_FALL_GRAVITY = 2
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(99, 14)
+current = true
+
+[node name="Spikes" parent="." instance=ExtResource("3_nt5ux")]
+position = Vector2(174, 150)
+
+[node name="Spikes2" parent="." instance=ExtResource("3_nt5ux")]
+position = Vector2(192, 150)

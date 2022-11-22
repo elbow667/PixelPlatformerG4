@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 #var velocity = Vector2.ZERO
 # velocity already defined in CharacterBody2D
@@ -52,7 +53,8 @@ func _physics_process(_delta):
 		animated_sprite.frame = 1
 		
 func apply_gravity():
-	velocity.y += GRAVITY	
+	velocity.y += GRAVITY
+	velocity.y = min(velocity.y, 300)
 
 func apply_friction():
 	velocity.x = move_toward(velocity.x, 0, FRICTION)
