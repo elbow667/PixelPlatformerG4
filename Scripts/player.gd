@@ -1,27 +1,43 @@
 extends CharacterBody2D
 class_name Player
 
+enum {MOVE, CLIMB}
+var state := MOVE
+
 #var velocity = Vector2.ZERO
 # velocity already defined in CharacterBody2D
 #@export var SPEED : float = 100.0
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var ladderCheck : RayCast2D = $LadderCheck
 
 @export var moveData : Resource
+
 
 func _ready():
 	animated_sprite.frames = load("res://Scenes/player_pink_skin.tres")
 
 func _physics_process(_delta):
-	apply_gravity()
-	
+
 	var direction = Vector2.ZERO
+	direction.x = Input.get_axis("ui_left", "ui_right")
+	direction.y = Input.get_axis("ui_up", "ui_down")
 	
-	direction = Input.get_axis("ui_left", "ui_right")
+	match state:
+		MOVE: move_state(direction)
+		CLIMB: climb_state(direction)
+	
+
+	
+
+func move_state(direction):
+	if is_on_ladder() and Input.is_action_pressed("ui_up"):
+		state = CLIMB
+	apply_gravity()
 	if direction: # if not zero
-		apply_acceleration(direction)
+		apply_acceleration(direction.x)
 		animated_sprite.animation = "Run"
-		animated_sprite.flip_h = velocity.x > 0
+		animated_sprite.flip_h = direction.x > 0
 #		if (velocity.x > 0):
 #			animated_sprite.flip_h = true
 #		elif(velocity.x < 0):
@@ -48,6 +64,22 @@ func _physics_process(_delta):
 	if just_landed:
 		animated_sprite.animation = "Run"
 		animated_sprite.frame = 1
+
+func climb_state(direction):
+	if not is_on_ladder():
+		state = MOVE
+	if direction.length() != 0:
+		animated_sprite.animation = "Run"
+	else: animated_sprite.animation = "Idle"	
+	velocity = direction * 50
+	var _velocity = move_and_slide()
+		
+
+func is_on_ladder():
+	if not ladderCheck.is_colliding(): return false
+	var collider = ladderCheck.get_collider()
+	if not collider is Ladder: return false
+	return true
 		
 func apply_gravity():
 	velocity.y += moveData.GRAVITY
