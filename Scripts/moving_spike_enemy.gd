@@ -2,7 +2,7 @@
 # tool stuff doesn't seem to be working in Godot 4.0
 # setget is implemented differently in Godot 4.0, since its not working
 # and none of the examples I have seeked out have worked for this so I have 
-# no idea if i'm doing it correctly so I have commneted it out.
+# no idea if i'm doing it correctly so I have commented it out.
 
 extends Path2D
 
