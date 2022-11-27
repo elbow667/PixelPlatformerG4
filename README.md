@@ -1,5 +1,7 @@
 # PixelPlatformerG4
 Heartbeast tutorial for Pixel Platformer but created in Godot 4.0 beta.<br>
+See original tutorial here: <br>
+	https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm <br>
 * For PathFollow2d properties Offset and Unit Offset have been renamed to Progress <br> 
 	and Progress Ratio <br>
 * setget seems to have been removed and implimented differently in Godot 4.0, <br>
