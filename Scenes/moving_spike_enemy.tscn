@@ -7,8 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x075s"]
 radius = 8.0
 
-[sub_resource type="Animation" id="Animation_asata"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_lh0al"]
+resource_name = "MoveAlongPathBounce"
+length = 6.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +18,10 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0]
+"values": [0.0225234, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_auml3"]
@@ -40,10 +42,8 @@ tracks/0/keys = {
 "values": [0.0225234, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_lh0al"]
-resource_name = "MoveAlongPathBounce"
-length = 6.0
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_asata"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,10 +51,10 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0225234, 1.0]
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6rtk7"]
@@ -66,6 +66,7 @@ _data = {
 
 [node name="MovingSpikeEnemy" type="Path2D"]
 script = ExtResource("1_e17mc")
+animation_type = 0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 progress = 152.243

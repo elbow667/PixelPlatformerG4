@@ -64,4 +64,4 @@ animation_type = 1
 [node name="MovingSpikeEnemy2" parent="." instance=ExtResource("7_u1g4o")]
 position = Vector2(425, 112)
 curve = SubResource("Curve2D_3oc80")
-animation_type = 0
+speed = 2
