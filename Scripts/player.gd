@@ -71,6 +71,9 @@ func move_state(direction):
 		coyote_jump = true
 		coyoteJumpTimer.start()
 
+func player_die():
+	SoundPlayer.play_sound(SoundPlayer.HURT)
+	get_tree().reload_current_scene()
 
 func can_jump():
 	return is_on_floor() or coyote_jump
@@ -81,7 +84,8 @@ func input_jump_release():
 		velocity.y = moveData.JUMP_RELEASE_FORCE
 
 func input_double_jump():
-	if Input.is_action_just_pressed("ui_accept")	and double_jump > 0:
+	if Input.is_action_just_pressed("ui_accept") and double_jump > 0:
+		SoundPlayer.play_sound(SoundPlayer.JUMP)
 		velocity.y = moveData.JUMP_FORCE
 		double_jump -= 1
 
@@ -102,6 +106,7 @@ func reset_double_jump():
 	
 func input_jump():
 	if Input.is_action_just_pressed("ui_accept") or buffered_jump:
+		SoundPlayer.play_sound(SoundPlayer.JUMP)
 		velocity.y = moveData.JUMP_FORCE
 		buffered_jump = false
 
