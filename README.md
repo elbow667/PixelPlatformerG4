@@ -2,10 +2,12 @@
 Heartbeast tutorial for Pixel Platformer but created in Godot 4.0 beta.<br>
 See original tutorial here: <br>
 	https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm <br>
+* Virtually nothing has changed with regards to Sound and Audio Busses <br>
 * For PathFollow2d properties Offset and Unit Offset have been renamed to Progress <br> 
 	and Progress Ratio <br>
 * setget seems to have been removed and implimented differently in Godot 4.0, <br>
 	as a result, the tool code for moving_spike_enemy.gd looks quite different. <br>
+* commented out the @tool annotation due to editor stability issues (crashing). <br>
 * find_node() has been removed in GDScript 2.0 and replaced with get_node(). <br>
 * @export var moveData: PlayerMovmentData was sufficient to get autocompletion in 4.0 <br>
 * On LadderCheck Raycast2D: make sure property "Hit from Inside" is selected. <br>
