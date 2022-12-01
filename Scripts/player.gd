@@ -12,7 +12,7 @@ var coyote_jump = false
 @onready var ladderCheck: RayCast2D = $LadderCheck
 @onready var jumpBufferTimer: Timer = $JumpBufferTimer
 @onready var coyoteJumpTimer: Timer = $CoyoteJumpTimer
-
+@onready var remoteTransform2D: = $RemoteTransform2D
 
 @export var moveData: PlayerMovmentData
 
@@ -73,7 +73,13 @@ func move_state(direction):
 
 func player_die():
 	SoundPlayer.play_sound(SoundPlayer.HURT)
-	get_tree().reload_current_scene()
+	queue_free()
+	Events.player_died.emit()
+
+
+func connect_camera(camera):
+	var camera_path = camera.get_path()
+	remoteTransform2D.remote_path = camera_path
 
 func can_jump():
 	return is_on_floor() or coyote_jump

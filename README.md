@@ -2,6 +2,11 @@
 Heartbeast tutorial for Pixel Platformer but created in Godot 4.0 beta.<br>
 See original tutorial here: <br>
 	https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm <br>
+* As of this writing, my player_spawn_location seems to be off by 10px causing <br>
+	me to land inside a platform and get stuck.  I adjusted with <br>
+	player_spawn_location = checkpoint_position + Vector2(0, -10) <br>
+* Signals are different, instead of Events.connect("player_died", self, "_on_player_died") <br>
+	you have Events.player_died.connect(_on_player_died) <br>
 * Virtually nothing has changed with regards to Sound and Audio Busses <br>
 * For PathFollow2d properties Offset and Unit Offset have been renamed to Progress <br> 
 	and Progress Ratio <br>

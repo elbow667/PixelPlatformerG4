@@ -8,6 +8,7 @@
 size = Vector2(12, 16)
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -12)
 collision_layer = 2
 script = ExtResource("1_xu5c6")
 moveData = ExtResource("2_j0gby")
@@ -36,6 +37,8 @@ one_shot = true
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="CoyoteJumpTimer" to="." method="_on_coyote_jump_timer_timeout"]
