@@ -8,7 +8,11 @@ var state = HOVER
 @onready var timer: = $Timer
 @onready var raycast: = $RayCast2D
 @onready var animatedSprite: = $AnimatedSprite2D
+@onready var particles: = $GPUParticles2D
 
+func _ready():
+	particles.one_shot = true
+	
 func _physics_process(delta):
 	match state:
 		HOVER: hover_state()
@@ -27,6 +31,7 @@ func fall_state(delta):
 		position.y = collision_point.y
 		state = LAND
 		timer.start(1.0)
+		particles.emitting = true
 		
 func land_state():
 	if timer.time_left == 0:

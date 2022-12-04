@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bynwj4q7ufphi"]
+[gd_scene load_steps=13 format=3 uid="uid://bynwj4q7ufphi"]
 
 [ext_resource type="Texture2D" uid="uid://5nr28x1c4hdm" path="res://Art/Characters/characters_packed.png" id="1_1cyvo"]
 [ext_resource type="Script" path="res://Scripts/stomp_enemy.gd" id="1_1qogi"]
@@ -28,6 +28,36 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipnow"]
 size = Vector2(14, 14)
 
+[sub_resource type="Gradient" id="Gradient_viiu8"]
+offsets = PackedFloat32Array(0.0128755, 0.600858, 0.948498)
+colors = PackedColorArray(0.654232, 0.654232, 0.654232, 0.988235, 0.995683, 0.995683, 0.995683, 0.362655, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g2cms"]
+gradient = SubResource("Gradient_viiu8")
+
+[sub_resource type="Gradient" id="Gradient_v50xh"]
+offsets = PackedFloat32Array(0.0429185, 0.450644, 0.7897)
+colors = PackedColorArray(0.607843, 0.607843, 0.607843, 0.968627, 0.724644, 0.724642, 0.724643, 0.486275, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ojuso"]
+gradient = SubResource("Gradient_v50xh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kckg4"]
+emission_shape = 3
+emission_box_extents = Vector3(9, 2, 0)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 2, 0)
+initial_velocity_max = 10.0
+angular_velocity_max = 1.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_ojuso")
+color_initial_ramp = SubResource("GradientTexture1D_g2cms")
+
 [node name="StompEnemy" type="Node2D"]
 script = ExtResource("1_1qogi")
 
@@ -48,3 +78,10 @@ target_position = Vector2(0, 16)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 64
+lifetime = 1.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_kckg4")
