@@ -20,28 +20,28 @@ var coyote_jump = false
 func _ready():
 	animated_sprite.frames = load("res://Scenes/player_pink_skin.tres")
 
-func _physics_process(_delta):
+func _physics_process(delta):
 
 	var direction = Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
 	direction.y = Input.get_axis("ui_up", "ui_down")
 	
 	match state:
-		MOVE: move_state(direction)
+		MOVE: move_state(direction, delta)
 		CLIMB: climb_state(direction)
 
-func move_state(direction):
+func move_state(direction, delta):
 	if is_on_ladder() and Input.is_action_just_pressed("ui_up"):
 		state = CLIMB
-	apply_gravity()
+	apply_gravity(delta)
 	
 	
 	if  horizontal_move(direction): # if not zero
-		apply_acceleration(direction.x)
+		apply_acceleration(direction.x, delta)
 		animated_sprite.animation = "Run"
 		animated_sprite.flip_h = direction.x > 0
 	else:
-		apply_friction()
+		apply_friction(delta)
 		animated_sprite.animation = "Idle"
 		
 	if is_on_floor():
@@ -55,7 +55,7 @@ func move_state(direction):
 		input_jump_release()
 		input_double_jump()
 		buffer_jump()
-		fast_fall()
+		fast_fall(delta)
 
 
 	var was_in_air = not is_on_floor()
@@ -100,9 +100,9 @@ func buffer_jump():
 		buffered_jump = true
 		jumpBufferTimer.start()
 
-func fast_fall():
+func fast_fall(delta):
 	if velocity.y > 0:
-		velocity.y += moveData.ADDITIONAL_FALL_GRAVITY
+		velocity.y += moveData.ADDITIONAL_FALL_GRAVITY * delta
 
 func horizontal_move(direction):
 	return direction.x != 0	
@@ -131,15 +131,15 @@ func is_on_ladder():
 	if not collider is Ladder: return false
 	return true
 
-func apply_gravity():
-	velocity.y += moveData.GRAVITY
+func apply_gravity(delta):
+	velocity.y += moveData.GRAVITY * delta
 	velocity.y = min(velocity.y, 300)
 
-func apply_friction():
-	velocity.x = move_toward(velocity.x, 0, moveData.FRICTION)
+func apply_friction(delta):
+	velocity.x = move_toward(velocity.x, 0, moveData.FRICTION * delta)
 
-func apply_acceleration(amount):
-	velocity.x = move_toward(velocity.x, moveData.MAX_SPEED * amount, moveData.ACCELLERATION)
+func apply_acceleration(amount, delta):
+	velocity.x = move_toward(velocity.x, moveData.MAX_SPEED * amount, moveData.ACCELLERATION * delta)
 
 
 func _on_jump_buffer_timer_timeout():

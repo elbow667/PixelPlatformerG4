@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cikskdsia8uts" path="res://Resources/fast_player_movement_data.tres" id="2_j0gby"]
 [ext_resource type="SpriteFrames" uid="uid://c0dbuw8yhnrs" path="res://Scenes/player_pink_skin.tres" id="2_on3rt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu4ja"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahmb2"]
 size = Vector2(12, 16)
 
 [node name="Player" type="CharacterBody2D"]
@@ -21,7 +21,7 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_bu4ja")
+shape = SubResource("RectangleShape2D_ahmb2")
 
 [node name="LadderCheck" type="RayCast2D" parent="."]
 position = Vector2(0, -2)

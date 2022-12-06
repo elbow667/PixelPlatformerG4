@@ -71,6 +71,7 @@ animation_type = 0
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 progress = 152.243
 rotates = false
+loop = false
 
 [node name="Enemy" type="Node2D" parent="PathFollow2D"]
 
