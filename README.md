@@ -2,6 +2,9 @@
 Heartbeast tutorial for Pixel Platformer but created in Godot 4.0 beta.<br>
 See original tutorial here: <br>
 	https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm <br>
+* Instead of setting Pause Mode to process, you set Process mode to Always <br>
+* ColorRect no longer has margins to adjust, I decided to do a fade to black <br>
+	animation instead <br>
 * String class method empty() has been changed to is_empty() <br>
 * For get_tree() change_scene() has changed to change_scene_to_file() <br>
 * For the particles, under Process Material, Initial Velocity, velocity and  <br>
