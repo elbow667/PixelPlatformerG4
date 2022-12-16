@@ -6,7 +6,7 @@ See original tutorial here: <br>
 	jumping, I simply used "ui_accept" for jumping leaving the up arrow key free. <br>
 	I called this input "enter_door".  This feels the most natural way to me. <br>
 * Instead of setting Pause Mode to process, you set Process mode to Always <br>
-* ColorRect no longer has margins to adjust, I decided to do a fade to black <br>
+* ColorRect no longer has margins to adjust, I decided to do a fade out/fade in <br>
 	animation instead <br>
 * String class method empty() has been changed to is_empty() <br>
 * For get_tree() change_scene() has changed to change_scene_to_file() <br>
