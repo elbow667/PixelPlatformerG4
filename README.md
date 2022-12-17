@@ -1,12 +1,11 @@
 # PixelPlatformerG4
 Heartbeast tutorial for Pixel Platformer but created in Godot 4.0 beta.<br>
-See original tutorial here: <br>
-	https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm <br>
-	**My addtions and or changes**<br>
+See [original tutorial here](https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm)
+<br>
+<br>
+**My addtions and or changes**
 * Added Music player which loads different music depending on current scene name <br>
-<br>
-<br>
-**Everything listed below were the changes needed to complete the tutorial** <br>
+	**Everything listed below were the changes needed to complete the tutorial** <br>
 * Instead of the work around implemented in Part 16 where HB used "ui_up" for  <br>
 	jumping, I simply used "ui_accept" for jumping leaving the up arrow key free. <br>
 	I called this input "enter_door".  This feels the most natural way to me. <br>
@@ -34,3 +33,4 @@ See original tutorial here: <br>
 	move_and_slide().<br>
 * Tilemaps implement **Terrains** instead of Autotile. <br>
 * VisualServer appears to have changed to **RenderingServer** in Godot 4.0. <br>
+
