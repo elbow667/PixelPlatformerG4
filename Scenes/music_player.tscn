@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://catd2libmfwpp"]
+
+[ext_resource type="Script" path="res://Scripts/MusicPlayer.gd" id="1_10e40"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_gs0f0"]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource("1_10e40")
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamMP3_gs0f0")

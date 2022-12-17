@@ -22,7 +22,7 @@ _data = {
 }
 point_count = 5
 
-[node name="Level1" instance=ExtResource("1_imyi8")]
+[node name="level_1" instance=ExtResource("1_imyi8")]
 
 [node name="Player" parent="." index="0"]
 position = Vector2(23, 83)

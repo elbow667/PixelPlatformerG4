@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/transitions.gd" id="1_a5t5h"]
 
-[sub_resource type="Animation" id="Animation_7h1j8"]
+[sub_resource type="Animation" id="Animation_ivavs"]
 resource_name = "EnterLevel"
 length = 0.75
 tracks/0/type = "value"
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_mr7vy"]
+[sub_resource type="Animation" id="Animation_5dwvo"]
 resource_name = "ExitLevel"
 length = 0.75
 tracks/0/type = "value"
@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_g7e45"]
+[sub_resource type="Animation" id="Animation_6bkxq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -49,11 +49,11 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pw57"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7h8b"]
 _data = {
-"EnterLevel": SubResource("Animation_7h1j8"),
-"ExitLevel": SubResource("Animation_mr7vy"),
-"RESET": SubResource("Animation_g7e45")
+"EnterLevel": SubResource("Animation_ivavs"),
+"ExitLevel": SubResource("Animation_5dwvo"),
+"RESET": SubResource("Animation_6bkxq")
 }
 
 [node name="Transitions" type="CanvasLayer"]
@@ -62,7 +62,7 @@ script = ExtResource("1_a5t5h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6pw57")
+"": SubResource("AnimationLibrary_p7h8b")
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]

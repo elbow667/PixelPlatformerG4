@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cueocedmerddn"
+path="res://.godot/imported/Dungeon Theme.mp3-1d79d85c31f008081b7501e720c65bd5.mp3str"
+
+[deps]
+
+source_file="res://Music/Dungeon Theme.mp3"
+dest_files=["res://.godot/imported/Dungeon Theme.mp3-1d79d85c31f008081b7501e720c65bd5.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

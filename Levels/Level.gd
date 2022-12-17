@@ -7,6 +7,8 @@ var player_spawn_location = Vector2.ZERO
 @onready var camera: = $Camera2D
 @onready var player: = $Player
 @onready var timer: = $Timer
+#get the current scene and save as a string
+@onready var scene_name: String = get_tree().get_current_scene().get_name()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,9 @@ func _ready():
 	player_spawn_location = player.global_position
 	Events.player_died.connect(_on_player_died)
 	Events.hit_checkpoint.connect(_on_hit_checkpoint)
+	# pass the current scene name to the music player
+	MusicPlayer.play_music(MusicPlayer.get(scene_name))
+
 
 func _on_player_died():
 	timer.start(1.0)

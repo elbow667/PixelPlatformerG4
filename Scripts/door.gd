@@ -17,6 +17,7 @@ func _process(_delta):
 	if not player.is_on_floor(): return
 	if Input.is_action_just_pressed("enter_door"):
 		if target_level_path.is_empty(): return
+		MusicPlayer.stop_music()
 		go_to_next_room()
 		
 func _on_body_entered(body):
