@@ -2,12 +2,11 @@
 Heartbeast tutorial for Pixel Platformer but created in Godot 4.0 beta.<br>
 See original tutorial here: <br>
 	https://youtube.com/playlist?list=PL9FzW-m48fn16W1Sz5bhTd1ArQQv4f-Cm <br>
-	**My addtions and or changes
+	**My addtions and or changes**<br>
 * Added Music player which loads different music depending on current scene name <br>
 <br>
 <br>
-**Everything listed below were the changes needed to complete the tutorial <br>
-
+**Everything listed below were the changes needed to complete the tutorial** <br>
 * Instead of the work around implemented in Part 16 where HB used "ui_up" for  <br>
 	jumping, I simply used "ui_accept" for jumping leaving the up arrow key free. <br>
 	I called this input "enter_door".  This feels the most natural way to me. <br>
@@ -15,7 +14,7 @@ See original tutorial here: <br>
 * ColorRect no longer has margins to adjust, I decided to do a fade out/fade in <br>
 	animation instead <br>
 * String class method **empty()** has been changed to **is_empty()** <br>
-* For get_tree() change_scene() has changed to **change_scene_to_file()** <br>
+* For get_tree(), change_scene() has changed to **change_scene_to_file()** <br>
 * For the particles, under Process Material, Initial Velocity, velocity and  <br>
 	Velocity Random have been replaced with Velocity Min and Velocity Max. <br>
 * As of this writing, my player_spawn_location seems to be off by 10px causing <br>
