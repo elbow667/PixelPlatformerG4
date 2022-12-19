@@ -2,3 +2,4 @@
 .godot/
 # ignore mp3 files
 *.mp3
+*.mp3.import
