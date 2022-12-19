@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfwu0vwtvo5oy"
+path="res://.godot/imported/Grasslands Theme.mp3-d9369916fe089cf6ee2dcb60899da98e.mp3str"
+
+[deps]
+
+source_file="res://Music/Grasslands Theme.mp3"
+dest_files=["res://.godot/imported/Grasslands Theme.mp3-d9369916fe089cf6ee2dcb60899da98e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
