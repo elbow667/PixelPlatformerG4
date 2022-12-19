@@ -1,2 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+# ignore mp3 files
+*.mp3

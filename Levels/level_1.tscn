@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://gyodf5che4ej"]
+[gd_scene load_steps=13 format=3 uid="uid://gyodf5che4ej"]
 
 [ext_resource type="PackedScene" path="res://Levels/level.tscn" id="1_imyi8"]
 [ext_resource type="PackedScene" uid="uid://hmpoln8ll3rq" path="res://Scenes/tile_map.tscn" id="2_gbxc5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://fncuiimij6di" path="res://Scenes/checkpoint.tscn" id="7_3i3i8"]
 [ext_resource type="PackedScene" uid="uid://bynwj4q7ufphi" path="res://Scenes/stomp_enemy.tscn" id="8_uq6sa"]
 [ext_resource type="PackedScene" uid="uid://c1itt56ruo27k" path="res://Scenes/door.tscn" id="9_xf2g5"]
+[ext_resource type="PackedScene" uid="uid://cgatte6atnsup" path="res://Scenes/weather_control.tscn" id="10_073ok"]
 
 [sub_resource type="Curve2D" id="Curve2D_2owbx"]
 _data = {
@@ -72,3 +73,5 @@ position = Vector2(58, 21)
 [node name="Door" parent="." index="15" instance=ExtResource("9_xf2g5")]
 position = Vector2(803, 148)
 target_level_path = "res://Levels/level_2.tscn"
+
+[node name="WeatherControl" parent="." index="16" instance=ExtResource("10_073ok")]
