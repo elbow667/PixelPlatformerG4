@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://fncuiimij6di" path="res://Scenes/checkpoint.tscn" id="7_3i3i8"]
 [ext_resource type="PackedScene" uid="uid://bynwj4q7ufphi" path="res://Scenes/stomp_enemy.tscn" id="8_uq6sa"]
 [ext_resource type="PackedScene" uid="uid://c1itt56ruo27k" path="res://Scenes/door.tscn" id="9_xf2g5"]
-[ext_resource type="PackedScene" uid="uid://cgatte6atnsup" path="res://Scenes/weather_control.tscn" id="10_073ok"]
+[ext_resource type="PackedScene" uid="uid://bfs47xge73s73" path="res://Scenes/parallax_background.tscn" id="10_2xqye"]
 
 [sub_resource type="Curve2D" id="Curve2D_2owbx"]
 _data = {
@@ -74,4 +74,4 @@ position = Vector2(58, 21)
 position = Vector2(803, 148)
 target_level_path = "res://Levels/level_2.tscn"
 
-[node name="WeatherControl" parent="." index="16" instance=ExtResource("10_073ok")]
+[node name="ParallaxBackground" parent="." index="16" instance=ExtResource("10_2xqye")]

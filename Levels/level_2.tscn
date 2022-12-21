@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://85kwxd57n330"]
+[gd_scene load_steps=7 format=3 uid="uid://85kwxd57n330"]
 
 [ext_resource type="PackedScene" path="res://Levels/level.tscn" id="1_qe5vr"]
 [ext_resource type="PackedScene" uid="uid://hmpoln8ll3rq" path="res://Scenes/tile_map.tscn" id="2_b1avl"]
 [ext_resource type="PackedScene" uid="uid://x0tlqfyitnkd" path="res://Scenes/walking_enemy.tscn" id="3_aeoms"]
 [ext_resource type="PackedScene" uid="uid://fncuiimij6di" path="res://Scenes/checkpoint.tscn" id="4_j13o1"]
 [ext_resource type="PackedScene" uid="uid://c1itt56ruo27k" path="res://Scenes/door.tscn" id="5_sykgt"]
+[ext_resource type="PackedScene" uid="uid://bfs47xge73s73" path="res://Scenes/parallax_background.tscn" id="6_2k6k3"]
 
 [node name="level_2" instance=ExtResource("1_qe5vr")]
 
@@ -23,3 +24,5 @@ position = Vector2(177, -53)
 [node name="Door" parent="." index="6" instance=ExtResource("5_sykgt")]
 position = Vector2(185, 54)
 target_level_path = "res://Levels/level_1.tscn"
+
+[node name="ParallaxBackground" parent="." index="7" instance=ExtResource("6_2k6k3")]

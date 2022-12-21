@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfs47xge73s73"]
+
+[ext_resource type="Texture2D" uid="uid://cph7xdpd7tgyb" path="res://Art/Environment/Nebula Aqua-Pink_512x512.png" id="1_sdd2f"]
+[ext_resource type="Texture2D" uid="uid://bggkkwhehvrbg" path="res://Art/Environment/Stars Small_512x512_1.png" id="2_0dump"]
+[ext_resource type="Texture2D" uid="uid://comyn756f47et" path="res://Art/Environment/Stars Small_512x512_2.png" id="3_f1h0g"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Nebula2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(512, 512)
+
+[node name="Sprite2D" type="Sprite2D" parent="Nebula2"]
+texture = ExtResource("1_sdd2f")
+centered = false
+
+[node name="BackgroundStars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(256, 256)
+motion_mirroring = Vector2(512, 512)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundStars"]
+texture = ExtResource("2_0dump")
+centered = false
+
+[node name="Nebula" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(512, 512)
+
+[node name="Sprite2D" type="Sprite2D" parent="Nebula"]
+modulate = Color(1, 1, 1, 0.721569)
+texture = ExtResource("1_sdd2f")
+centered = false
+
+[node name="ForegroundStars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(512, 512)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForegroundStars"]
+modulate = Color(1, 1, 1, 0.721569)
+texture = ExtResource("3_f1h0g")
+centered = false
